@@ -1,0 +1,61 @@
+---
+layout: base
+---
+
+<div>
+  <h2>pages - {{page.sessao}}</h2>
+  {% assign prevCap = null %}
+  {% for post in site.sessoes %}
+
+    {% if post.sessao == page.sessao %}
+      {% unless prevCap == post.capitulo %}
+        <p>{{post.capitulo}}{% if post.capitulo == page.capitulo %} - active{% endif %}</p>
+        {% assign prevCap = post.capitulo %}
+      {% endunless %}
+    {% endif %}
+
+  {% endfor %}
+  <hr/>
+</div>
+
+<!-- START pager -->
+{% assign prevPost = null %}
+{% assign nextPost = null %}
+{% assign currentFound = false %}
+
+{% for post in site.sessoes %}
+
+  {% if post.url == page.url %}
+    {% assign currentFound = true %}
+
+  {% elsif currentFound == false and post.hidden != true %}
+    {% assign prevPost = post %}
+
+  {% elsif currentFound == true and post.hidden != true %}
+    {% assign nextPost = post %}
+    {% break %}
+  {% endif %}
+
+{% endfor %}
+
+
+<ul class="page-pager">
+  <li>
+    {% if prevPost %}
+    <a href="{{site.baseurl}}{{prevPost.url}}" title="View previous" class="bttn-pager prev" data-pager-prev><span>Prev</span></a>
+    {% else %}
+    <a href="#" title="View previous" class="bttn-pager prev disabled" data-pager-prev><span>Prev</span></a>
+    {% endif %}
+  </li>
+  <li>
+    {% if nextPost %}
+    <a href="{{site.baseurl}}{{nextPost.url}}" title="View next" class="bttn-pager next" data-pager-next><span>Next</span></a>
+    {% else %}
+    <a href="#" title="View next" class="bttn-pager next disabled" data-pager-next><span>Next</span></a>
+    {% endif %}
+  </li>
+</ul>
+<!-- END pager -->
+
+
+{{content}}

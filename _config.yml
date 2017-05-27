@@ -7,3 +7,7 @@ baseurl: https://leihla.github.io/violoncelando
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+collections:
+  sessoes:
+    output: true
