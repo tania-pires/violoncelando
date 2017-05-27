@@ -1,0 +1,40 @@
+language: node_js
+node_js:
+  - "6"
+
+env:
+  global:
+  - CXX=g++-4.8
+  - DEPLOY_BRANCH=master
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+cache:
+  apt: true
+  yarn: true
+  directories:
+    - node_modules
+    - bundle/cache
+
+before_install:
+- rvm install 2.1
+- chmod +x ./.build_scripts/deploy.sh
+
+before_script:
+- yarn run lint
+- yarn test
+
+script:
+- yarn run build
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: .build_scripts/deploy.sh
+  on:
+    branch: ${DEPLOY_BRANCH}

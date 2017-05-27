@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include meta.html %}
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" />
+
+    <!-- build:css /assets/styles/vendor.css -->
+    <!-- endbuild -->
+
+    <!-- build:css /assets/styles/main.css -->
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body class="page page--docs">
+    <div class="page__inner">
+      {% include header.html %}
+      {{content}}
+      {% include footer.html %}
+    </div>
+
+    <!-- build:js /assets/scripts/vendor.js -->
+    <script src="/assets/scripts/vendor.js"></script>
+    <!-- endbuild -->
+    <!-- build:js /assets/scripts/bundle.js -->
+    <script src="/assets/scripts/bundle.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>

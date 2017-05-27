@@ -1,0 +1,9 @@
+source: app
+# To exclude inside app/
+exclude:
+  - assets/scripts
+  - assets/styles
+baseurl: https://leihla.github.io/violoncelando
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
