@@ -3,7 +3,7 @@ layout: base
 ---
 
 <div>
-  <h2>pages - {{page.sessao}}</h2>
+  <h2>{{page.sessao}}</h2>
   {% assign prevCap = null %}
   {% for post in site.sessoes %}
 
@@ -39,6 +39,11 @@ layout: base
 {% endfor %}
 
 
+  <h2>{{page.title}}</h2>
+
+{{content}}
+
+
 <ul class="page-pager">
   <li>
     {% if prevPost %}
@@ -57,5 +62,3 @@ layout: base
 </ul>
 <!-- END pager -->
 
-
-{{content}}
