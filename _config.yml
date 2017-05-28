@@ -6,5 +6,7 @@ kramdown:
   syntax_highlighter: rouge
 
 collections:
-  sessoes:
+  livro:
+    output: false
+  capitulos:
     output: true
