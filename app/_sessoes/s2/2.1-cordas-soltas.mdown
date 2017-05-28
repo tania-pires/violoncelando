@@ -1,0 +1,11 @@
+---
+layout: page
+permalink: /parte1/capitulo2/cordas-soltas/
+
+sessao: Capítulo 2
+capitulo: As Cordas Soltas
+
+title: As Cordas Soltas
+---
+
+Aqui vai o texto

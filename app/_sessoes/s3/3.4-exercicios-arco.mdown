@@ -1,0 +1,11 @@
+---
+layout: page
+permalink: /parte1/capitulo3/exercicios-arco/
+
+sessao: Capítulo 3
+capitulo: Postura da Mão Direita
+
+title: Exercícios de Cordas Soltas com Arco
+---
+
+Aqui vai o texto

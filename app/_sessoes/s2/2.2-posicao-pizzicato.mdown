@@ -1,0 +1,11 @@
+---
+layout: page
+permalink: /parte1/capitulo2/posicao-pizzicato/
+
+sessao: Capítulo 2
+capitulo: As Cordas Soltas
+
+title: Posição para execução do pizzicato
+---
+
+Aqui vai o texto

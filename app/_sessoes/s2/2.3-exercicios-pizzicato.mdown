@@ -1,0 +1,11 @@
+---
+layout: page
+permalink: /parte1/capitulo2/exercicios-pizzicato/
+
+sessao: Capítulo 2
+capitulo: As Cordas Soltas
+
+title: Exercícios de cordas soltas em pizzicato
+---
+
+Aqui vai o texto

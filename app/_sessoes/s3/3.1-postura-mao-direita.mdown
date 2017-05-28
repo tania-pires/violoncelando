@@ -1,0 +1,11 @@
+---
+layout: page
+permalink: /parte1/capitulo3/postura-mao-direita/
+
+sessao: Capítulo 3
+capitulo: Postura da Mão Direita
+
+title: Postura da Mão Direita
+---
+
+Aqui vai o texto

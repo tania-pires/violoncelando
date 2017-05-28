@@ -1,0 +1,11 @@
+---
+layout: page
+permalink: /parte1/capitulo4/celulas-ritmicas/
+
+sessao: Capítulo 4
+capitulo: Variações Rítmicas
+
+title: Células Rítmicas
+---
+
+Aqui vai o texto
