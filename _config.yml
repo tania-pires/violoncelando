@@ -8,5 +8,3 @@ kramdown:
 collections:
   livro:
     output: false
-  capitulos:
-    output: true

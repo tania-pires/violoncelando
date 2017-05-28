@@ -22,33 +22,29 @@ layout: base
     <div class="bb-custom-wrapper" id="book-1">
       <div class="bb-bookblock">
 
+        {% assign posts = site.livro | where: "capitulo",page.capitulo  %}
+        {% for post in posts %}
         <div class="bb-item">
           <div class="bb-custom-side page-layout-1">
             <div class="chapter-nav">
-              <span>Capítulo 1</span>
+              <span>{{post.capitulo}}</span>
+                {% assign prevPg = null %}
                 <ul>
-                  {% assign prevCap = null %}
-                  {% for post in site.sessoes %}
-
-                    {% if post.sessao == page.sessao %}
-                      {% unless prevCap == post.capitulo %}
-                        <li>{{post.capitulo}}{% if post.capitulo == page.capitulo %} - active{% endif %}</li>
-                        {% assign prevCap = post.capitulo %}
-                      {% endunless %}
-                    {% endif %}
-
-                  {% endfor %}
-                  <hr/>
-                  </ul>
+                {% for post_ in posts %}
+                  {% unless prevPg == post_.pagina %}
+                    <li>{{post_.pagina}}</li>
+                    {% assign prevPg = post_.pagina %}
+                  {% endunless %}
+                {% endfor %}
+                </ul>
             </div>
           </div>
           <div class="bb-custom-side page-layout-1">
-            <h3>
-              Capítulo 1 <span>Introdução ao violoncelo</span>
-            </h3>
-            <p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
+            <h3>{{post.title}}</h3>
+            {{post.content | markdownify}}
           </div>
         </div>
+        {% endfor %}
         
       </div><!-- /bb-bookblock -->
       <nav>
@@ -59,6 +55,8 @@ layout: base
     </div><!-- /bb-custom-wrapper -->
 
   </div><!-- /bb-custom-wrapper -->
+
+
 
 
 

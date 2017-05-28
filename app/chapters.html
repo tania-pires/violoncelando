@@ -1,7 +1,81 @@
 ---
-layout: chapters
+layout: base
+permalink: chapters/
 ---
-<div class='hello'>
-  <p>In the beginning the Universe was created.</p>
-  <p>This has made a lot of people very angry and been widely regarded as a bad move.</p>
-</div>
+
+<div id="scroll-wrap" class="container">
+
+    {% assign prevPart = null %}
+    {% for postPart in site.livro %}
+      {% unless prevPart == postPart.parte %}
+        <h2>parte: {{postPart.parte}}</h2>
+
+        <div class="main">
+          <div id="bookshelf" class="bookshelf">
+          {% assign prevChapt = null %}
+          {% assign posts = site.livro | where: "parte",postPart.parte  %}
+          {% for postChapt in posts %}
+            {% unless prevChapt == postChapt.capitulo %}
+              <figure>
+                <div class="book" data-book="book-{{postChapt.capitulo}}"></div>
+                <div class="buttons"><a href="#">{{postChapt.capitulo}}</a><a href="#"></a></div>
+                <figcaption><h2>{{postChapt.capituloTitulo}}</h2></figcaption>
+                <div class="details">
+                </div>
+              </figure>
+              {% assign prevChapt = postChapt.capitulo %}
+            {% endunless %}
+          {% endfor %}
+          </div>
+        </div>
+        {% assign prevPart = postPart.parte %}
+      {% endunless %}
+    {% endfor %}
+      <!-- /main -->
+      
+    </div><!-- /container -->
+
+    {% assign prevChapt = null %}
+      {% for postChapt in site.livro %}
+        {% unless prevChapt == postChapt.capitulo %}
+        <!-- Fullscreen BookBlock -->
+        <div class="bb-custom-wrapper" id="book-{{postChapt.capitulo}}">
+          <div class="bb-bookblock">
+
+            {% assign posts = site.livro | where: "capitulo",postChapt.capitulo  %}
+            {% for post in posts %}
+              <div class="bb-item">
+                <div class="bb-custom-side page-layout-1">
+                  <div class="chapter-nav">
+                    <span>{{postChapt.capitulo}}</span>
+                      {% assign prevPg = null %}
+                      <ul>
+                      {% for post_ in posts %}
+                        {% unless prevPg == post_.pagina %}
+                          <li>{{post_.pagina}}</li>
+                          {% assign prevPg = post_.pagina %}
+                        {% endunless %}
+                      {% endfor %}
+                      </ul>
+                  </div>
+                </div>
+                <div class="bb-custom-side page-layout-1">
+                  <h3>{{post.title}}</h3>
+                  {{post.content | markdownify}}
+                </div>
+              </div>
+            {% endfor %}
+
+          </div><!-- /bb-bookblock -->
+          <nav>
+            <a href="#" class="bb-nav-prev">Previous</a>
+            <a href="#" class="bb-nav-next">Next</a>
+            <a href="#" class="bb-nav-close">Close</a>
+          </nav>
+        </div><!-- /bb-custom-wrapper -->
+        {% assign prevChapt = postPart.capitulo %}
+      {% endunless %}
+    {% endfor %}
+
+  </div><!-- /bb-custom-wrapper -->
+
