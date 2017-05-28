@@ -8,4 +8,4 @@ capitulo: As Cordas Soltas
 title: As Cordas Soltas
 ---
 
-Aqui vai o texto
+Só tem a imagem da cabeça do violoncelo e os vídeos (Capítulo 2.1_Cordas soltas/capítulo 2.1_escala)
