@@ -8,4 +8,4 @@ capitulo: As Cordas Soltas
 title: Exercícios de cordas soltas em pizzicato
 ---
 
-Aqui vai o texto
+vídeos - capítulo 2.3_ex1 ao capítulo 2.3_ex5
