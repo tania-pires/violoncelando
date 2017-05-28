@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /sessao2/cordas-soltas/cordas1/
+permalink: /sessao2/cordas-soltas/introducao/
 
-sessao: Sessão 2
-capitulo: Cordas Soltas
+sessao: Capítulo 2
+capitulo: Introdução
 ---
 
-Soltem as cordas!!!
+No capítulo de hoje, vamos reconhecer as cordas soltas. Vamos aprender onde se posicionam na pauta e a indentificá-las no violoncelo.
