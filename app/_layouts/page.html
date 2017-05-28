@@ -26,13 +26,20 @@ layout: base
           <div class="bb-custom-side page-layout-1">
             <div class="chapter-nav">
               <span>Capítulo 1</span>
-              <ul>
-                <li>Introdução</li>
-                <li>Partes do Violoncelo</li>
-                <li>Cuidados a ter</li>
-                <li>Materiais</li>
-                <li>Informações</li>
-              </ul>
+                <ul>
+                  {% assign prevCap = null %}
+                  {% for post in site.sessoes %}
+
+                    {% if post.sessao == page.sessao %}
+                      {% unless prevCap == post.capitulo %}
+                        <li>{{post.capitulo}}{% if post.capitulo == page.capitulo %} - active{% endif %}</li>
+                        {% assign prevCap = post.capitulo %}
+                      {% endunless %}
+                    {% endif %}
+
+                  {% endfor %}
+                  <hr/>
+                  </ul>
             </div>
           </div>
           <div class="bb-custom-side page-layout-1">
@@ -51,11 +58,6 @@ layout: base
       </nav>
     </div><!-- /bb-custom-wrapper -->
 
-    <nav>
-      <a href="#" class="bb-nav-prev">Previous</a>
-      <a href="#" class="bb-nav-next">Next</a>
-      <a href="#" class="bb-nav-close">Close</a>
-    </nav>
   </div><!-- /bb-custom-wrapper -->
 
 
@@ -64,18 +66,20 @@ layout: base
 
 <div>
   <h2>{{page.sessao}}</h2>
+  <ul>
   {% assign prevCap = null %}
   {% for post in site.sessoes %}
 
     {% if post.sessao == page.sessao %}
       {% unless prevCap == post.capitulo %}
-        <p>{{post.capitulo}}{% if post.capitulo == page.capitulo %} - active{% endif %}</p>
+        <li>{{post.capitulo}}{% if post.capitulo == page.capitulo %} - active{% endif %}</li>
         {% assign prevCap = post.capitulo %}
       {% endunless %}
     {% endif %}
 
   {% endfor %}
   <hr/>
+  </ul>
 </div>
 
 <!-- START pager -->
